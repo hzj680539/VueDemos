@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常用指令</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1 v-if="yes">show yes</h1>
+    <h1 v-if="no">show no</h1>
+    <h1 v-if="age > 20">大于20</h1>
+    <h1>------------------</h1>
+    <h1 v-else>age<=20</h1>
+    <h1 v-show="name.indexOf('ace') > 0">included</h1>
+    <h1 v-else>Not included</h1>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            yes: true,
+            no: false,
+            age: 28,
+            name: "jack"
+        }
+    });
+
+</script>
+<p>note:</p>
+<p>v-show指令和v-if都是设置元素的显示与隐藏，不同过的是，v-show始终渲染元素，只是置元素的display为none.</p>
+<p>v-else元素必须立即跟在v-if或v-show元素的后面——否则它不能被识别。</p>
+</body>
+</html>
+

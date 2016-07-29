@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>常用指令</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message" value="{{message}}">
+    <button type="button" v-on:click="popupMessage()">AAAAAAA</button>
+    <button type="button" v-on:click="sayHello('Hello')">BBBBBB</button>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "VueJs"
+        },
+        methods: {
+            popupMessage: function(){
+                alert(this.message);
+            },
+            sayHello: function(msg){
+                alert(msg);
+            }
+
+        }
+    });
+</script>
+<p>
+    Note: v-on:click="" 可以直接简写成 @:click=""
+</p>
+</body>
+</html>
